@@ -10,6 +10,8 @@ A ready-to-use template for academic **seminar series** websites. Built with **J
 
 ---
 
+![SWT screenshot](/assets/img/swt-responsive.png)
+
 ## Features
 
 <ul class="list-unstyled lh-lg my-3">
