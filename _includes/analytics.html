@@ -1,0 +1,18 @@
+{%- comment -%}
+Paste your analytics scripts right here.
+They will ONLY render in production (JEKYLL_ENV=production).
+GitHub Pages sets production automatically on deploy.
+{%- endcomment -%}
+{%- if jekyll.environment == "production" -%}
+
+  <!-- Google tag (GA4) – replace G-XXXXXXXXXX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+
+{%- endif -%}

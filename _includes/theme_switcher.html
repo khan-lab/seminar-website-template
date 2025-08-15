@@ -1,0 +1,60 @@
+{%- if site.bootswatch.enabled_switcher -%}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-palette"></i> <span id="themeLabel">Theme</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown" id="themeMenu"></ul>
+</li>
+
+<script>
+(function(){
+  var LABEL  = document.getElementById('themeLabel');
+  var MENU   = document.getElementById('themeMenu');
+  var LINK   = document.getElementById('theme-css');
+  var VER    = '{{ site.bootswatch.version | default: "5.3.7" }}';
+
+  // Edit this allowlist if you want fewer/more themes
+  var THEMES = [
+    'default',
+    'cerulean','cosmo','cyborg','darkly','flatly','journal','litera','lumen','lux',
+    'materia','minty','morph','pulse','quartz','sandstone','simplex','sketchy','slate',
+    'solar','spacelab','superhero','united','vapor','yeti','zephyr'
+  ];
+
+  function pretty(t){ return t === 'default' ? 'Default' : t.charAt(0).toUpperCase() + t.slice(1); }
+  function hrefFor(t){
+    return (t && t !== 'default')
+      ? 'https://cdn.jsdelivr.net/npm/bootswatch@'+VER+'/dist/'+t+'/bootstrap.min.css'
+      : 'https://cdn.jsdelivr.net/npm/bootstrap@'+VER+'/dist/css/bootstrap.min.css';
+  }
+  function apply(t){
+    LINK.href = hrefFor(t);
+    LABEL.textContent = 'Theme: ' + pretty(t || 'default');
+    try { localStorage.setItem('bootswatch_theme', t || 'default'); } catch(e){}
+  }
+
+  // Build menu
+  THEMES.forEach(function(t){
+    var li = document.createElement('li');
+    var a  = document.createElement('a');
+    a.href = '#';
+    a.className = 'dropdown-item';
+    a.textContent = pretty(t);
+    a.dataset.theme = t;
+    a.addEventListener('click', function(e){ e.preventDefault(); apply(this.dataset.theme); });
+    li.appendChild(a);
+    MENU.appendChild(li);
+  });
+
+  // Initial label (reflect saved or config default)
+  (function initLabel(){
+    try {
+      var saved = localStorage.getItem('bootswatch_theme');
+      if (saved && saved !== 'default') { LABEL.textContent = 'Theme: ' + pretty(saved); return; }
+    } catch(e){}
+    var cfg = '{{ site.bootswatch.theme | default: "" | downcase | strip }}';
+    LABEL.textContent = (cfg && cfg !== 'default') ? ('Theme: ' + pretty(cfg)) : 'Theme: Default';
+  })();
+})();
+</script>
+{%- endif -%}

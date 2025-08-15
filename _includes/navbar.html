@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="{{ '/' | relative_url }}">
+        <img src="{{ site.logo | relative_url }}" alt="ILM" height="75px">
+        <span class="d-inline-flex flex-column lh-2">
+            <span class="fw-bold">{{ site.title }}</span>
+            <small class="text-muted">{{ site.tagline }}</small>
+        </span>
+        </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">{% for item in site.nav %}
+                    <li class="nav-item"><a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                    </li>{% endfor %}
+                    {% include theme_switcher.html %}
+                </ul>
+            </div>
+        </div>
+    </nav>

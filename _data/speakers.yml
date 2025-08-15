@@ -1,0 +1,95 @@
+- id: ai-for-regulatory-genomics-2025-10-18
+  title: "AI for Regulatory Genomics: From Enhancers to Therapeutics"
+  abstract: |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est. In sed consequat lectus. Vivamus posuere interdum massa sit amet imperdiet. Duis libero orci, lobortis ut ipsum eu, porta dignissim ipsum. Morbi gravida odio rhoncus nisi rutrum, quis auctor risus laoreet. Pellentesque rutrum laoreet enim, et feugiat eros bibendum et. Donec consectetur dolor vel ipsum cursus commodo. Aliquam efficitur dolor at enim euismod, in laoreet ligula egestas. Nulla aliquet tellus vitae semper posuere. Aliquam erat volutpat.
+
+    Integer ipsum dui, congue sit amet hendrerit et, rhoncus consequat risus. Aliquam id neque ipsum. Morbi mollis ante at felis sagittis sodales. Fusce rhoncus nulla id nibh imperdiet pulvinar. Praesent a tortor at turpis tincidunt tincidunt ut nec dolor. Pellentesque accumsan nisi mi, in elementum est vulputate ornare. Pellentesque egestas porttitor scelerisque. Curabitur congue lorem ut mauris faucibus bibendum. Donec sit amet gravida lorem, ut lobortis metus.
+
+    Nullam et aliquam quam, ultrices tempor risus. Donec in purus non sem laoreet maximus sit amet ut lectus. Curabitur facilisis, ipsum eget venenatis placerat, ante dui tempor nulla, et vehicula nisl augue nec elit. Fusce eu mi sed nibh consequat sagittis. Donec sed quam nisi. Nullam arcu dui, facilisis ac consequat sed, mollis lobortis velit. Praesent sed accumsan dui, sed aliquet eros. Suspendisse eget fermentum mi, id tempus ipsum. Donec condimentum, elit dapibus vestibulum laoreet, odio turpis bibendum neque, sit amet lacinia nulla purus non risus. Quisque commodo arcu sit amet ipsum auctor, ac tempor magna maximus.
+  date: 2025-10-18 16:30:00 +04:00
+  duration_min: 60
+  meet_url: "https://doodle.com/your-doodle-link" # <- Doodle or any scheduling link
+  meet_desc: "Sign up for 10–15 min 1:1 chats with the speaker." # optional
+  venue: "Auditorium"
+  format: "hybrid" # one of: in_person | remote | hybrid
+  remote:
+    platform: "Zoom" # e.g., Zoom / Teams / Google Meet
+    url: "https://example.zoom.us/j/123456789"
+    meeting_id: "123 456 789"
+    passcode: "ILM2025"
+    instructions: "University SSO required." # optional
+  registration: "https://example.com/register/ilm-2025-09"
+  speaker:
+    name: "Prof. Jane Doe"
+    affiliation: "Institute for Genomic Insights"
+    photo: "/assets/img/speakers/placeholder_woman.png" # or a full URL to a headshot
+    bio: |
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est. In sed consequat lectus. Vivamus posuere interdum massa sit amet imperdiet. Duis libero orci, lobortis ut ipsum eu, porta dignissim ipsum. Morbi gravida odio rhoncus nisi rutrum, quis auctor risus laoreet. Pellentesque rutrum laoreet enim, et feugiat eros bibendum et. Donec consectetur dolor vel ipsum cursus commodo. Aliquam efficitur dolor at enim euismod, in laoreet ligula egestas. Nulla aliquet tellus vitae semper posuere. Aliquam erat volutpat.
+  junior:
+    name: "John Jr."
+    affiliation: "New University"
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est."
+    photo: "/assets/img/speakers/placeholder_man.png" # optional
+    url: "" # optional
+
+- id: fm-for-multiomics-2025-11-23
+  title: "Foundation Models for Multi-Omics Integration"
+  abstract: |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est. In sed consequat lectus. Vivamus posuere interdum massa sit amet imperdiet. Duis libero orci, lobortis ut ipsum eu, porta dignissim ipsum. Morbi gravida odio rhoncus nisi rutrum, quis auctor risus laoreet. Pellentesque rutrum laoreet enim, et feugiat eros bibendum et. Donec consectetur dolor vel ipsum cursus commodo. Aliquam efficitur dolor at enim euismod, in laoreet ligula egestas. Nulla aliquet tellus vitae semper posuere. Aliquam erat volutpat.
+
+    Integer ipsum dui, congue sit amet hendrerit et, rhoncus consequat risus. Aliquam id neque ipsum. Morbi mollis ante at felis sagittis sodales. Fusce rhoncus nulla id nibh imperdiet pulvinar. Praesent a tortor at turpis tincidunt tincidunt ut nec dolor. Pellentesque accumsan nisi mi, in elementum est vulputate ornare. Pellentesque egestas porttitor scelerisque. Curabitur congue lorem ut mauris faucibus bibendum. Donec sit amet gravida lorem, ut lobortis metus.
+
+    Nullam et aliquam quam, ultrices tempor risus. Donec in purus non sem laoreet maximus sit amet ut lectus. Curabitur facilisis, ipsum eget venenatis placerat, ante dui tempor nulla, et vehicula nisl augue nec elit. Fusce eu mi sed nibh consequat sagittis. Donec sed quam nisi. Nullam arcu dui, facilisis ac consequat sed, mollis lobortis velit. Praesent sed accumsan dui, sed aliquet eros. Suspendisse eget fermentum mi, id tempus ipsum. Donec condimentum, elit dapibus vestibulum laoreet, odio turpis bibendum neque, sit amet lacinia nulla purus non risus. Quisque commodo arcu sit amet ipsum auctor, ac tempor magna maximus.
+  date: 2025-11-23 16:30:00 +04:00
+  duration_min: 60
+  format: "remote" # one of: in_person | remote | hybrid
+  remote:
+    platform: "Zoom" # e.g., Zoom / Teams / Google Meet
+    url: "https://example.zoom.us/j/123456789"
+    meeting_id: "123 456 789"
+    passcode: "ILM2025"
+    instructions: "University SSO required." # optional
+  venue: "Online"
+  registration: "https://example.com/register/ilm-2025-09"
+
+  speaker:
+    name: "Prof. Lin Wei"
+    affiliation: "Center for AI in Medicine"
+    photo: "/assets/img/speakers/placeholder_man.png"
+    bio: |
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est. In sed consequat lectus. Vivamus posuere interdum massa sit amet imperdiet. Duis libero orci, lobortis ut ipsum eu, porta dignissim ipsum. Morbi gravida odio rhoncus nisi rutrum, quis auctor risus laoreet. Pellentesque rutrum laoreet enim, et feugiat eros bibendum et. Donec consectetur dolor vel ipsum cursus commodo. Aliquam efficitur dolor at enim euismod, in laoreet ligula egestas. Nulla aliquet tellus vitae semper posuere. Aliquam erat volutpat.
+
+  junior:
+    name: "ECR Next"
+    affiliation: "University of Gahkuch"
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est. In sed consequat lectus. Vivamus posuere"
+    photo: "" # optional
+    url: "https://example.com/ali" # optional
+
+- id: sc-atlases-for-med-2026-01-20
+  title: "Single-Cell Atlases for Precision Medicine"
+  abstract: &haddad_abs |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est. In sed consequat lectus. Vivamus posuere interdum massa sit amet imperdiet. Duis libero orci, lobortis ut ipsum eu, porta dignissim ipsum. Morbi gravida odio rhoncus nisi rutrum, quis auctor risus laoreet. Pellentesque rutrum laoreet enim, et feugiat eros bibendum et. Donec consectetur dolor vel ipsum cursus commodo. Aliquam efficitur dolor at enim euismod, in laoreet ligula egestas. Nulla aliquet tellus vitae semper posuere. Aliquam erat volutpat.
+
+    Integer ipsum dui, congue sit amet hendrerit et, rhoncus consequat risus. Aliquam id neque ipsum. Morbi mollis ante at felis sagittis sodales. Fusce rhoncus nulla id nibh imperdiet pulvinar. Praesent a tortor at turpis tincidunt tincidunt ut nec dolor. Pellentesque accumsan nisi mi, in elementum est vulputate ornare. Pellentesque egestas porttitor scelerisque. Curabitur congue lorem ut mauris faucibus bibendum. Donec sit amet gravida lorem, ut lobortis metus.
+
+    Nullam et aliquam quam, ultrices tempor risus. Donec in purus non sem laoreet maximus sit amet ut lectus. Curabitur facilisis, ipsum eget venenatis placerat, ante dui tempor nulla, et vehicula nisl augue nec elit. Fusce eu mi sed nibh consequat sagittis. Donec sed quam nisi. Nullam arcu dui, facilisis ac consequat sed, mollis lobortis velit. Praesent sed accumsan dui, sed aliquet eros. Suspendisse eget fermentum mi, id tempus ipsum. Donec condimentum, elit dapibus vestibulum laoreet, odio turpis bibendum neque, sit amet lacinia nulla purus non risus. Quisque commodo arcu sit amet ipsum auctor, ac tempor magna maximus. Nulla.
+
+  date: 2026-01-20 16:30:00 +04:00
+  duration_min: 60
+  meet_url: "https://doodle.com/your-doodle-link" # <- Doodle or any scheduling link
+  venue: "Main Lecture Hall"
+  registration: "https://example.com/register/ilm-2025-09"
+  speaker:
+    name: "Dr. Sara Haddad"
+    affiliation: "Center for Systems Biology"
+    photo: "/assets/img/speakers/placeholder_woman.png" # or a full URL to a headshot
+    bio: &haddad_bio |
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est. In sed consequat lectus. Vivamus posuere interdum massa sit amet imperdiet. Duis libero orci, lobortis ut ipsum eu, porta dignissim ipsum. Morbi gravida odio rhoncus nisi rutrum, quis auctor risus laoreet. Pellentesque rutrum laoreet enim, et feugiat eros bibendum et. Donec consectetur dolor vel ipsum cursus commodo. Aliquam efficitur dolor at enim euismod, in laoreet ligula egestas. Nulla aliquet tellus vitae semper posuere. Aliquam erat volutpat.
+
+  junior:
+    name: "John Jr."
+    affiliation: "University of Bluesky"
+    blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum lectus sit amet mi hendrerit finibus et ut est. In sed consequat lectus. Vivamus posuere"
+    photo: "" # optional
+    url: "https://example.com/ali" # optional

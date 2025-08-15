@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this template, please cite it as below."
+authors:
+  - family-names: "Khan"
+    given-names: "Aziz"
+    orcid: "https://orcid.org/0000-0002-6459-6224"
+title: "Seminar Website Template"
+version: 1.0.0
+doi:
+date-released: 2025-08-14
+url: "https://github.com/khan-lab/seminar-website-template"
+date-updated: 2025-08-14

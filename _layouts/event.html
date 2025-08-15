@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{%- assign ev = site.data.speakers | where: 'id', page.event_id | first -%}
+{%- if ev == nil -%}{% assign ev = page %}{% endif %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <h1 class="mb-1">{{ ev.title }}</h1>
+      <p class="text-muted">
+        <strong>{{ ev.speaker.name }}</strong> — {{ ev.speaker.affiliation }}<br>
+        {{ ev.date | date: '%A, %B %d, %Y • %H:%M' }} (UTC{{ site.ilm.timezone }}) • {{ ev.venue | default: site.ilm.venue }}
+      </p>
+      {% include event_mode.html event=ev %}
+      <h4>Abstract</h4>
+      <p>{{ ev.abstract }}</p>
+      <div class="my-3">
+        
+      {% include event_actions.html event=ev %}
+  
+      </div>
+      {% if ev.speaker.bio or ev.speaker.photo %}
+        <h4 class="mt-4">About the Speaker</h4>
+        <div class="d-flex align-items-start gap-3">
+          <img
+            src="{{ ev.speaker.photo | default: '/assets/img/placeholder-speaker.jpg' | relative_url }}"
+            alt="{{ ev.speaker.name }}"
+            class="speaker-avatar-large img-fluid rounded organizer-avatar"
+            loading="lazy">
+          <div>
+            {% if ev.speaker.bio %}<p class="mb-0">{{ ev.speaker.bio }}</p>{% endif %}
+          </div>
+        </div>
+        {% endif %}
+      
+      {% include meet_the_speaker.html event=ev %}
+
+      {% include junior_speaker.html event=ev %}
+
+    </div>
+  </div>
+</div>
+

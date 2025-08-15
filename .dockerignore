@@ -1,0 +1,7 @@
+.git
+vendor/
+node_modules/
+_site/
+*.swp
+*.log
+.DS_Store

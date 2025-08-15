@@ -1,0 +1,55 @@
+## A Seminar Series Website Template
+# This is a Jekyll + Bootstrap starter template for seminar series websites, designed to showcase speakers, archive past talks, and provide a clean, responsive layout.
+# It includes features like speaker photos, event details, and optional junior speaker sections.
+# It is built by the Khan Lab at MBZUAI and can be easily customized for any academic seminar series.
+
+version: "1.0.0"
+
+title: "A Seminar Series Website Template"
+tagline: "By Khan Lab @ MBZUAI, Abu Dhabi"
+description: "A Jekyll + Bootstrap starter for seminars/events series website with speakers, archive, calendar buttons, Bootwatch themes, event formats, and optional junior-speaker/meet modules."
+
+info_text: "&dagger;This template is open source and free to use, adapt, and build upon for seminar and event series in any discipline."
+
+organization: "School of Public Health, University of Gahkuch"
+department: "Department of Computational Biology"
+
+logo: "/assets/img/logo_demo.png"
+
+# Social media links
+image: "/assets/img/share.svg"
+
+author: "Aziz Khan"
+email: "aziz.khan@mbzuai.ac.ae"
+
+url: ""
+baseurl: ""
+subscribe_url: "https://example.com/subscribe" # e.g., a newsletter signup link
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude: [Gemfile, Gemfile.lock, node_modules, vendor]
+
+# Bootstrap / Bootswatch config
+bootswatch:
+  # Set to a Bootswatch theme name (lowercase) or leave empty to use default Bootstrap
+  # Examples: flatly, darkly, cosmo, cyborg, litera, lumen, lux, materia, minty,
+  # morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab,
+  # superhero, united, vapor, yeti, zephyr, cerulean, journal
+  theme: ""
+  version: "5.3.7" # do not change this unless you know what you're doing
+  enabled_switcher: true # or false to hide the selector entirely
+
+ilm:
+  { timezone: "+04:00", default_duration_min: 60, venue: "MBZUAI, Abu Dhabi" }
+nav:
+  - { title: Home, url: / }
+  - { title: About, url: /about/ }
+  - { title: All Seminars, url: /events/ }
+  - { title: Organizers, url: /organizers/ }

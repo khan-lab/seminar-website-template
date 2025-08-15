@@ -1,0 +1,33 @@
+
+{%- assign ev = include.event -%}
+{%- assign title = ev.title | uri_escape -%}
+{%- assign details = ev.abstract | default: '' | strip_newlines | uri_escape -%}
+{%- assign venue = ev.venue | default: site.ilm.venue | uri_escape -%}
+{%- assign duration = ev.duration_min | default: site.ilm.default_duration_min -%}
+{%- assign start_iso = ev.date | date: '%Y-%m-%dT%H:%M:%S%z' -%}
+{%- assign end_iso = ev.date | date: '%s' | plus: duration | date: '%Y-%m-%dT%H:%M:%S%z' -%}
+{%- assign start_ics = start_iso | replace: '-', '' | replace: ':', '' -%}
+{%- assign end_ics = end_iso | replace: '-', '' | replace: ':', '' -%}
+{%- capture ics -%}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ILM//Seminar//EN
+BEGIN:VEVENT
+UID:{{ ev.uid | default: ev.id | default: ev.title | slugify }}@ilm
+DTSTAMP:{{ 'now' | date: '%Y%m%dT%H%M%SZ' }}
+DTSTART:{{ start_ics }}
+DTEND:{{ end_ics }}
+SUMMARY:{{ ev.title | escape }}
+DESCRIPTION:{{ ev.abstract | strip_newlines | escape }}\nSpeaker: {{ ev.speaker.name | escape }} ({{ ev.speaker.affiliation | escape }})
+LOCATION:{{ ev.venue | default: site.ilm.venue | escape }}
+END:VEVENT
+END:VCALENDAR
+{%- endcapture -%}
+{%- assign ics_data = ics | strip | uri_escape -%}
+{%- assign gstart = ev.date | date: '%Y%m%dT%H%M%S' -%}
+{%- assign gend = end_iso | date: '%Y%m%dT%H%M%S' -%}
+<div class="btn-group" role="group">
+  
+  <a class="btn btn-outline-primary btn-sm" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ title }}&details={{ details }}&location={{ venue }}&dates={{ gstart }}/{{ gend }}">Add to Google Calendar</a>
+  <a class="btn btn-outline-secondary btn-sm" download="{{ ev.title | slugify }}.ics" href="data:text/calendar;charset=utf-8,{{ ics_data }}">Download .ics</a>
+</div>

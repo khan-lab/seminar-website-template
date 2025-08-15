@@ -1,0 +1,33 @@
+{%- comment -%}
+Meet the Speaker block.
+Usage: {% include meet_the_speaker.html event=ev %}
+Shows if a scheduling link and/or description exists in the event data.
+
+Recognized fields:
+- Link: meet_url | meet.link | meet.url | doodle | meet_doodle
+- Description: meet_desc | meet.description | meet.desc
+{%- endcomment -%}
+
+{%- assign ev = include.event | default: page -%}
+{%- assign link = ev.meet_url | default: ev.meet.link | default: ev.meet.url | default: ev.doodle | default: ev.meet_doodle -%}
+{%- assign desc = ev.meet_desc | default: ev.meet.description | default: ev.meet.desc -%}
+
+{%- if link or desc -%}
+<div class="card border-0 shadow-sm mt-4">
+  <div class="card-body d-flex flex-column flex-lg-row gap-3 align-items-start">
+    <div class="rounded-circle d-flex align-items-center justify-content-center"
+         style="width:70px;height:70px;background:#f1f3f5;">
+      <i class="bi bi-people fs-4" aria-hidden="true"></i>
+    </div>
+    <div class="flex-grow-1">
+      <h4 class="h5 mb-2">Meet the Speaker</h4>
+      {% if desc %}<p class="text-secondary mb-3">{{ desc }}</p>{% endif %}
+      {% if link %}
+        <a class="btn btn-primary btn-sm" href="{{ link }}" target="_blank" rel="noopener">
+          Book a slot
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{%- endif -%}

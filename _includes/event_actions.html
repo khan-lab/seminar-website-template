@@ -1,0 +1,10 @@
+{%- assign ev = include.event -%}
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-2">
+  <!-- Left: Register (+ optional badge) -->
+    {% include register.html event=ev %}
+  
+  <!-- Right: Calendar buttons -->
+  <div class="ms-sm-auto">
+    {% include add_to_calendar.html event=ev %}
+  </div>
+</div>

@@ -1,0 +1,32 @@
+# Demo organizers data (template). Keep keys as shown below.
+
+- name: "Full Name"
+  orcid: "https://orcid.org/0000-0002-6459-6224"
+  title: "Assistant Professor of Genetics"
+  affiliation: "Your Institution, City"
+  role: "Lead Organizer"
+  photo: "/assets/img/organizers/default.svg" # or a full URL
+  url: "https://example.edu/~lead"
+
+- name: "Full Name"
+  orcid: "https://orcid.org/0000-0002-6459-6224"
+  title: "Assistant Professor of Biology"
+  affiliation: "Your Institution, City"
+  role: "Co-Organizer"
+  photo: "/assets/img/organizers/default.svg"
+  url: ""
+
+- name: "Full Name"
+  orcid: "https://orcid.org/0000-0002-6459-6224"
+  title: "Professor of Computer Science"
+  affiliation: "Your Institution, City"
+  role: "Faculty Advisor"
+  photo: "/assets/img/organizers/default.svg"
+  url: ""
+
+- name: "Full Name"
+  title: "Administrative Coordinator"
+  affiliation: "Your Institution, City"
+  role: "Coordinator"
+  photo: "/assets/img/organizers/default.svg"
+  url: ""

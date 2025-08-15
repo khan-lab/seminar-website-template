@@ -1,0 +1,90 @@
+---
+layout: page
+title: All Seminars
+subtitle: Browse all past and scheduled talks; filter by year or search title/abstract/speaker.
+---
+
+{% assign year_str = "," %}
+{% for ev in site.data.speakers %}
+  {% assign y = ev.date | date: "%Y" %}
+  {% assign token = ',' | append: y | append: ',' %}
+  {% unless year_str contains token %}
+    {% assign year_str = year_str | append: y | append: ',' %}
+  {% endunless %}
+{% endfor %}
+{% assign years = year_str | split: ',' | sort | reverse %}
+
+<div class="mb-3 d-flex gap-2 align-items-center">
+  <label for="yearFilter" class="form-label mb-0">Year:</label>
+  <select id="yearFilter" class="form-select form-select-sm" style="width:auto">
+  <option value="all" selected>All</option>
+  {% for y in years %}
+    {% if y != "" %}
+      <option value="{{ y }}">{{ y }}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+  <input id="searchBox" class="form-control form-control-sm ms-auto" type="search" placeholder="Search title, abstract, speaker…" style="max-width: 340px;">
+</div>
+
+<table class="table table-hover" id="archiveTable">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col" data-key="speaker">Speaker</th>
+      <th scope="col" data-key="title">Talk title</th>
+       <th scope="col" data-key="date">Date</th>
+      <th scope="col" data-key="junior">ECR Speaker</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    {% assign all = site.data.speakers | sort: 'date' | reverse %}
+    {% for ev in all %}
+    {% assign y = ev.date | date: '%Y' %}
+    <tr data-year="{{ y }}">
+      
+      <td>
+        <img
+          class="rounded-circle shadow-sm"
+          alt="{{ ev.speaker.name }}"
+          src="{{ ev.speaker.photo | default: '/assets/img/speakers/default.svg' | relative_url }}"
+          class="rounded-circle shadow-sm d-block mx-auto mb-3 speaker-avatar-small"
+          style="width: 80px; height: 80px; object-fit: cover;"
+          loading="lazy"
+        />
+
+      </td>
+      <td>
+        <div class="fw-semibold">{{ ev.speaker.name }}</div>
+        <div class="small text-muted">{{ ev.speaker.affiliation }}</div>
+      </td>
+     <td>
+        <div class="fw-semibold"><a href="{{ '/events/' | append: ev.id | append: '/' | relative_url }}" class="text-decoration-none">{{ ev.title }}</a></div>
+        <div class="small text-muted">{{ ev.abstract | truncate: 150 }}</div>
+      </td>
+      <td class="text-nowrap">{{ ev.date | date: '%Y-%m-%d' }}</td>
+
+       <td>
+        {% if ev.junior and ev.junior.name %}
+          <div class="fw-semibold">{{ ev.junior.name }}</div>
+          <div class="small text-muted">{{ ev.junior.affiliation }}</div>
+        {% else %}
+          <span class="text-muted">—</span>
+        {% endif %}
+      </td>
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div id="archivePager" class="d-flex align-items-center justify-content-between mt-3">
+  <div id="archiveCount" class="text-muted small"></div>
+  <nav aria-label="Archive pagination">
+    <ul class="pagination pagination-sm mb-0" id="pagination"></ul>
+  </nav>
+</div>
+
+<script src="{{ '/assets/js/seminars.js' | relative_url }}"></script>
+

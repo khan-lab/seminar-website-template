@@ -1,0 +1,32 @@
+{%- assign ev = include.event -%}
+{%- assign event_path = '/events/' | append: ev.id | append: '/' -%}
+<div class="card h-100 card-speaker shadow-sm border-0">
+  <img class="card-img-top" src="{{ ev.speaker.photo | default: '/assets/img/speakers/placeholder_woman.jpg' | relative_url }}" alt="{{ ev.speaker.name }}">
+  <div class="card-body d-flex flex-column">
+    
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <h5 class="card-title mb-0">
+        <a href="{{ event_path | relative_url }}" class="text-decoration-none">{{ ev.title }}</a>
+      </h5>
+      <div class="d-flex align-items-center gap-2">
+        {%- assign mode = ev.format | default: 'in_person' | downcase -%}
+        <span class="badge text-bg-{% if mode == 'remote' %}primary{% elsif mode == 'hybrid' %}warning{% else %}success{% endif %}">{{ mode | replace: '_', ' ' | capitalize }}</span>
+      </div>
+    </div>
+
+    <p class="text-muted mb-2 event-meta">
+      <span class="me-2"><i class="bi bi-calendar-event"></i> {{ ev.date | date: '%A, %B %d, %Y' }}</span>
+      <span><i class="bi bi-clock"></i> {{ ev.date | date: '%H:%M' }} </span> <br>
+      <span><i class="bi bi-geo-alt"></i> {{ ev.venue | default: site.ilm.venue }}</span>
+      
+    </p>
+    <p class="mb-2"><strong>{{ ev.speaker.name }}</strong> — {{ ev.speaker.affiliation }}</p>
+    <p class="text-secondary mb-3">{{ ev.abstract | truncate: 100 }}</p>
+    <div class="mt-auto">
+      {% include event_actions.html event=ev %}
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,22 @@
+{%- comment -%}
+Usage:
+  {% include register.html event=ev %}
+  {% include register.html event=page label="RSVP" btn_class="btn btn-primary btn-sm" %}
+You can also pass a URL directly:
+  {% include register.html url="https://example.com/register" %}
+
+Looks for any of: registration / register_url / rsvp
+{%- endcomment -%}
+
+{%- assign ev = include.event -%}
+{%- assign url = include.url | default: ev.registration | default: ev.register_url | default: ev.rsvp -%}
+{%- assign label = include.label | default: 'Register' -%}
+{%- assign btn_class = include.btn_class | default: 'btn btn-success btn-sm' -%}
+
+{%- if url and url != '' -%}
+    <div class="d-flex align-items-center gap-2">
+  <a class="{{ btn_class }}" href="{{ url }}" target="_blank" rel="noopener">
+    {{ label }}
+  </a>
+  </div>
+{%- endif -%}
