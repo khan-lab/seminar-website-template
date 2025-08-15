@@ -1,12 +1,12 @@
 # Seminar Website Template (Jekyll + Bootstrap)
 
-[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?logo=github)](https://github.com/khan-lab/seminar-series-template/generate)
+[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?logo=github)](https://github.com/khan-lab/seminar-website-template/generate)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](#license)
 
 A ready-to-use template for academic **seminar series** websites. Built with **Jekyll** and **Bootstrap**, it includes upcoming speakers on the home page, a searchable **archive**, **Add-to-Calendar** buttons (Google, universal `.ics`), optional **Meet the Speaker** and **Junior Speaker** sections, circular speaker photos, **Bootswatch** theming, and a **Docker** dev environment.
 
-**Repo:** https://github.com/khan-lab/seminar-series-template/  
-**Live demo:** https://khan-lab.github.io/seminar-series-template/
+**Repo:** https://github.com/khan-lab/seminar-website-template/  
+**Live demo:** https://khan-lab.github.io/seminar-website-template/
 
 ---
 
@@ -56,7 +56,7 @@ This uses a robust setup where Ruby gems are stored in a Docker volume and won�
 2. In your repo: **Settings → Pages**
    - **Build and deployment → Source:** GitHub Actions _(recommended)_ or **Deploy from branch**
 3. Your site will appear at  
-   `https://khan-lab.github.io/seminar-series-template/`
+   `https://khan-lab.github.io/seminar-website-template/`
 
 ---
 
