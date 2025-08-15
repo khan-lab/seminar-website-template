@@ -60,46 +60,6 @@ This uses a robust setup where Ruby gems are stored in a Docker volume and won�
 
 ---
 
-## Project structure
-
-```
-.
-├─ _config.yml
-├─ _data/
-│  ├─ speakers.yml
-│  └─ organizers.yml
-├─ _includes/
-│  ├─ add_to_calendar_buttons.html
-│  ├─ register.html
-│  ├─ event_actions.html
-│  ├─ event_mode.html
-│  ├─ meet_the_speaker.html
-│  ├─ junior_speaker.html
-│  ├─ analytics.html
-│  ├─ head.html
-│  ├─ footer.html
-│  └─ navbar.html
-├─ _layouts/
-│  ├─ default.html
-│  ├─ page.html
-│  └─ event.html
-├─ assets/
-│  ├─ css/main.css
-│  └─ img/
-├─ events/
-├─ scripts/generate_events.py
-├─ index.html
-├─ archive.html
-├─ organizers.md
-├─ about.md
-├─ 404.html (or 404.md)
-├─ Dockerfile
-├─ docker-compose.yml
-└─ start.sh
-```
-
----
-
 ## Data schema (`_data/speakers.yml`)
 
 ```yaml
