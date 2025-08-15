@@ -5,7 +5,7 @@
 
 version: "1.0.1"
 
-title: "A Seminar Series Website Template"
+title: "Seminar Series Website Template"
 tagline: "By Khan Lab @ MBZUAI, Abu Dhabi"
 description: "A Jekyll + Bootstrap starter for seminars/events series website with speakers, archive, calendar buttons, Bootwatch themes, event formats, and optional junior-speaker/meet modules."
 
