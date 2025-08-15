@@ -18,6 +18,7 @@ fi
 
 # 2) Build and serve
 echo "==> Building site..."
+bundle lock --add-platform arm64-darwin --add-platform x86_64-linux
 bundle exec jekyll build
 
 echo "==> Serving on http://$HOST:$PORT"
