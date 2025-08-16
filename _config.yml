@@ -3,7 +3,7 @@
 # It includes features like speaker photos, event details, and optional junior speaker sections.
 # It is built by the Khan Lab at MBZUAI and can be easily customized for any academic seminar series.
 
-version: "1.0.1"
+version: "1.0.2"
 
 title: "Seminar Series Website Template"
 tagline: "By Khan Lab @ MBZUAI, Abu Dhabi"
