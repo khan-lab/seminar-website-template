@@ -26,6 +26,11 @@ url: "https://khanlab.bio/seminar-website-template/"
 baseurl: ""
 subscribe_url: "https://example.com/subscribe" # e.g., a newsletter signup link
 
+color_mode:
+  default: "auto" # "light" | "dark" | "auto"
+  remember: true # persist user choice in localStorage
+  switcher: true # show a tiny toggle in the navbar
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap

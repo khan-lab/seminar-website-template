@@ -14,6 +14,27 @@
 
 
 <script>
+(function(){
+  var DEF = '{{ site.color_mode.default | default: "auto" }}'; // light | dark | auto
+  var REM = {{ site.color_mode.remember | default: true | jsonify }};
+  var mode = null;
+
+  try { if (REM) mode = localStorage.getItem('color_mode'); } catch(e){}
+
+  if (!mode) {
+    if (DEF === 'auto') {
+      try { mode = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+      catch(e){ mode = 'light'; }
+    } else {
+      mode = DEF;
+    }
+  }
+  document.documentElement.setAttribute('data-bs-theme', mode);
+})();
+</script>
+
+
+<script>
     (function(){
     var VER       = '{{ site.bootswatch.version | default: "5.3.7" }}';               // CDN version
     var CFG_THEME = '{{ site.bootswatch.theme   | default: "" | downcase | strip }}'; // "", "default", or bootswatch name

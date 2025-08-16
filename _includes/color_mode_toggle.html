@@ -1,0 +1,36 @@
+{%- if site.color_mode.switcher -%}
+<li class="nav-item">
+  <button class="btn btn-link nav-link p-0" id="modeToggle" aria-label="Toggle color mode">
+    <i id="modeIcon" class="bi bi-circle-half"></i>
+  </button>
+</li>
+
+<script>
+(function(){
+  var REM = {{ site.color_mode.remember | default: true | jsonify }};
+  var btn = document.getElementById('modeToggle');
+  var ico = document.getElementById('modeIcon');
+
+  function iconFor(mode){
+    return mode === 'dark' ? 'bi bi-moon' : 'bi bi-sun';
+  }
+  function current(){
+    return document.documentElement.getAttribute('data-bs-theme') || 'light';
+  }
+  function set(mode){
+    document.documentElement.setAttribute('data-bs-theme', mode);
+    ico.className = iconFor(mode);
+    try { if (REM) localStorage.setItem('color_mode', mode); } catch(e){}
+  }
+
+  // init icon
+  ico.className = iconFor(current());
+
+  // toggle light <-> dark
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    set(current() === 'dark' ? 'light' : 'dark');
+  });
+})();
+</script>
+{%- endif -%}

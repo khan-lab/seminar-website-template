@@ -1,7 +1,7 @@
 {%- if site.bootswatch.enabled_switcher -%}
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="bi bi-palette"></i> <span id="themeLabel">Theme</span>
+    <i class="bi bi-palette"></i> <span id="themeLabel"></span>
   </a>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown" id="themeMenu"></ul>
 </li>
@@ -29,7 +29,7 @@
   }
   function apply(t){
     LINK.href = hrefFor(t);
-    LABEL.textContent = 'Theme: ' + pretty(t || 'default');
+    LABEL.textContent = ' ' + pretty(t || 'default');
     try { localStorage.setItem('bootswatch_theme', t || 'default'); } catch(e){}
   }
 
@@ -50,10 +50,10 @@
   (function initLabel(){
     try {
       var saved = localStorage.getItem('bootswatch_theme');
-      if (saved && saved !== 'default') { LABEL.textContent = 'Theme: ' + pretty(saved); return; }
+      if (saved && saved !== 'default') { LABEL.textContent = ' ' + pretty(saved); return; }
     } catch(e){}
     var cfg = '{{ site.bootswatch.theme | default: "" | downcase | strip }}';
-    LABEL.textContent = (cfg && cfg !== 'default') ? ('Theme: ' + pretty(cfg)) : 'Theme: Default';
+    LABEL.textContent = (cfg && cfg !== 'default') ? (' ' + pretty(cfg)) : ' Default';
   })();
 })();
 </script>
