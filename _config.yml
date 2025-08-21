@@ -25,6 +25,7 @@ email: "aziz.khan@mbzuai.ac.ae"
 url: "https://khanlab.bio/seminar-website-template/"
 baseurl: ""
 subscribe_url: "https://example.com/subscribe" # e.g., a newsletter signup link
+speaker_recommend_url: "https://example.com/recomend" # e.g., a form for recommending speakers
 
 color_mode:
   default: "auto" # "light" | "dark" | "auto"

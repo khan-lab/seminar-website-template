@@ -25,10 +25,17 @@ title: ""
             <i class="bi bi-calendar-event me-2"></i>Upcoming talks
           </a>
           {% if site.subscribe_url !="" %}
-          <a class="btn btn-outline-secondary btn-sm" href="{{ site.subscribe_url | relative_url }}" target="">
+          <a class="btn btn-outline-secondary btn-sm" href="{{ site.subscribe_url | relative_url }}" target=_blank>"">
             <i class="bi bi-envelope-open me-2"></i>Subscribe
           </a>
           {% endif %}
+
+          {% if site.speaker_recommend_url !="" %}
+          <a class="btn btn-outline-secondary btn-sm" href="{{ site.speaker_recommend_url | relative_url }}" target="_blank">
+            <i class="bi bi-mic me-2"></i>Recommend Speakers
+          </a>
+          {% endif %}
+
           <a class="btn btn-outline-secondary btn-sm" href="{{ '/events/' | relative_url }}">
             <i class="bi bi-collection me-2"></i>Archive
           </a>
